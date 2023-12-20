@@ -79,7 +79,7 @@ const NavBar = () => {
           <div className={Style.navbar_container_left_box_input}>
             <div className={Style.navbar_container_left_box_input_box}>
               <input type="text" placeholder="search nft" />
-              <BsSearch onClick={() => {}} className={Style.search_con} />
+              <BsSearch onClick={() => {}} className={Style.search_icon} />
             </div>
           </div>
         </div>
@@ -124,7 +124,7 @@ const NavBar = () => {
                 width={40}
                 height={40}
                 onClick={() => openProfile()}
-                className="navbar_container_right_profile"
+                className={Style.navbar_container_right_profile}
               />
               {profile && <Profile />}
             </div>
