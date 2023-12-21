@@ -1,11 +1,11 @@
 .helpCenter{
     padding: .5rem 1rem;
-    transition: all .3s ease-in;
+    transition: all .2s ease-in;
     /* z-index: 222222222; */
 }
 
 .helpCenter:hover{
     background-color: var(--icons-color);
     color:var(--shadow-dark-color);
-    border-radius: .3rem;
+    border-radius: 2rem;
 }
