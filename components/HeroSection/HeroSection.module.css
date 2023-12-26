@@ -29,7 +29,7 @@
 }
 
 @media screen and (max-width: 55em){
-    .heroSection{
+    .heroSection_box{
         grid-template-columns: 1fr;
         gap: 4rem;
     }
