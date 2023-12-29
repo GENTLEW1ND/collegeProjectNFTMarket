@@ -5,6 +5,7 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
+    overflow:hidden;
 }
 
 .bigNFTSlider_box_left {

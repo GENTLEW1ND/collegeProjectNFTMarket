@@ -9,6 +9,7 @@ import Title from './Title/Title';
 import Catagory from './Catagory/Catagory';
 import Filter from './Filter/Filter';
 import NFTCard from './NFTCard/NFTCard';
+import Collection from './Collection/Collection';
 
 export {
     Button,
@@ -21,5 +22,6 @@ export {
     Title,
     Catagory,
     Filter,
-    NFTCard
+    NFTCard,
+    Collection
 };
