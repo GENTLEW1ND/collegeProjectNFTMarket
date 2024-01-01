@@ -22,7 +22,7 @@ const Home = () => {
       <HeroSection />
       <Service />
       <BigNFTSlider />
-      <Title heading="Latest Collection Audio"
+      <Title heading="Audio Collection "
         paragraph="Discover the most outstanding NFTs in all topics of life."
       />
       <AudioLive />
