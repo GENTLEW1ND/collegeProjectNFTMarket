@@ -21,7 +21,13 @@ const Footer = () => {
     <div className={Style.footer}>
       <div className={Style.footer_box}>
         <div className={Style.footer_box_social}>
-          <Image src={imges.logo} alt="Footer logo" height={100} width={100} />
+          <Image
+            src={imges.logo}
+            alt="Footer logo"
+            height={100}
+            width={100}
+            className={Style.footer_box_social_logo}
+          />
           <p>
             The world's first and largest digital marketplace for non-fungible
             tokens(NFTs). Buy,sell, and discover exclusive content of digital

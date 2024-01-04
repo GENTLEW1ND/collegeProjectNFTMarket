@@ -6,17 +6,17 @@ import { MdVerified } from "react-icons/md";
 import Style from "./DaysComponents.module.css";
 import images from "../../../img";
 
-const DaysComponents = () => {
+const DaysComponents = ({el, i}) => {
   return (
     <div className={Style.daysComponent}>
       <div className={Style.daysComponent_box}>
         <div className={Style.daysComponent_box_img}>
           <Image
-            src={images.creatorbackground1}
+            src={el.background}
             className={Style.daysComponent_box_img_img}
             alt="profile background"
             width={375}
-            height={200}
+            height={210}
             objectFit="cover"
           />
         </div>
@@ -26,7 +26,7 @@ const DaysComponents = () => {
             src={images.creatorbackground2}
             alt="profile"
             width={120}
-            height={150}
+            height={100}
             className={Style.daysComponent_box_img_1}
             objectFit="covers"
           />
@@ -34,7 +34,7 @@ const DaysComponents = () => {
             src={images.creatorbackground2}
             alt="profile"
             width={120}
-            height={150}
+            height={100}
             className={Style.daysComponent_box_img_2}
             objectFit="covers"
           />
@@ -42,7 +42,7 @@ const DaysComponents = () => {
             src={images.creatorbackground2}
             alt="profile"
             width={120}
-            height={150}
+            height={100}
             className={Style.daysComponent_box_img_3}
             objectFit="covers"
           />
@@ -53,7 +53,7 @@ const DaysComponents = () => {
           <div className={Style.daysComponent_box_title_info}>
             <div className={Style.daysComponent_box_title_info_profile}>
               <Image
-                src={images.user1}
+                src={el.user}
                 alt="profile"
                 width={30}
                 height={30}

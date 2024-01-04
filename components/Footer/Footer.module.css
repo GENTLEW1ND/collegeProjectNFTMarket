@@ -14,6 +14,10 @@
 }
 
 /* //SOCIAL  */
+.footer_box_social_logo{
+    width: 15rem;
+}
+
 .footer_social{
     display: flex;
     gap: 1.3rem;

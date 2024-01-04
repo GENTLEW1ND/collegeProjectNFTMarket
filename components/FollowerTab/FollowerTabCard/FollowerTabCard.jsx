@@ -17,6 +17,7 @@ const FollowerTabCard = ({ i, el }) => {
       setFollowing(false);
     }
   };
+
   return (
     <div className={Style.FollowerTabCard}>
       <div className={Style.FollowerTabCard_rank}>
@@ -29,7 +30,7 @@ const FollowerTabCard = ({ i, el }) => {
         <div className={Style.FollowerTabCard_box_img}>
           <Image
             className={Style.FollowerTabCard_box_img_img}
-            src={images.creatorbackground1}
+            src={el.background}
             alt="profile background"
             width={275}
             height={160}
@@ -43,7 +44,7 @@ const FollowerTabCard = ({ i, el }) => {
             alt="profile picture"
             width={50}
             height={50}
-            src={images.user1}
+            src={el.user}
           />
         </div>
 

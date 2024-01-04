@@ -7,7 +7,8 @@
     padding: 4rem;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 2 rem;
+    gap: 1rem;
+    width:90rem;
 }
 
 .category_box {
