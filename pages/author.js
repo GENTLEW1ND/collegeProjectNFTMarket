@@ -5,7 +5,7 @@ import Style from '../styles/author.module.css'
 import { Banner } from '../collectionPage/collectionIndex'
 import { Brand, Title } from '../components/ComponentIndex'
 import images from '../img'
-// import {AuthorProfileCard, AuthorTaps, TabCard}
+import { AuthorProfileCard, AuthorTaps, TabCard } from '../authorPage/componentsIndex.jsx'
 
 const author = () => {
     const popularArray = [
@@ -27,6 +27,7 @@ const author = () => {
     return (
         <div className={Style.banner}>
             <Banner bannerImage={images.creatorbackground2} />
+            <AuthorProfileCard/>
         </div>
     )
 }
