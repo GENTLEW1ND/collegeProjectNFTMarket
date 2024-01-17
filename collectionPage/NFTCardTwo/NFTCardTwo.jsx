@@ -6,7 +6,7 @@ import { MdVerified, MdTimer } from "react-icons/md";
 
 //INTERNAL IMPORT
 import Style from "./NFTCardTwo.module.css";
-import images from "../../img";
+// import images from "../../img";
 import { LikeProfile } from "../../components/ComponentIndex";
 
 const NFTCardTwo = ({ NFTData }) => {
