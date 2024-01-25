@@ -92,6 +92,7 @@ const NFTDescription = () => {
       setProvinence(false);
     } else {
       setOwner(false);
+      setHistory(true);
     }
   };
 
@@ -110,19 +111,19 @@ const NFTDescription = () => {
             {social && (
               <div className={Style.NFTDescription_box_share_box_social}>
                 <a href="#">
-                  <TiSocialFacebook /> Facebook
+                  <TiSocialFacebook />Facebook
                 </a>
                 <a href="#">
-                  <TiSocialInstagram /> Instagram
+                  <TiSocialInstagram />Instagram
                 </a>
                 <a href="#">
-                  <TiSocialYoutube /> Youtube
+                  <TiSocialYoutube />Youtube
                 </a>
                 <a href="#">
-                  <TiSocialTwitter /> Twitter
+                  <TiSocialTwitter />Twitter
                 </a>
                 <a href="#">
-                  <TiSocialLinkedin /> Linkedin
+                  <TiSocialLinkedin />Linkedin
                 </a>
               </div>
             )}
@@ -176,7 +177,7 @@ const NFTDescription = () => {
                 alt="profile"
                 width={40}
                 height={40}
-                className={Style.NFTDescription_box_profile_box_right_img}
+                className={Style.NFTDescription_box_profile_box_left_img}
               />
 
               <div className={Style.NFTDescription_box_profile_box_right_info}>
@@ -189,7 +190,7 @@ const NFTDescription = () => {
           </div>
           <div className={Style.NFTDescription_box_profile_biding}>
             <p>
-              <MdVerified /> <span>Auction ending in:</span>
+              <MdTimer /> <span>Auction ending in:</span>
             </p>
 
             <div className={Style.NFTDescription_box_profile_biding_box_timer}>
