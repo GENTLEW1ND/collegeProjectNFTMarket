@@ -61,7 +61,7 @@ const UploadNFT = () => {
         royalties={royalties}
         fileSize={fileSize}
         category={category}
-        image={images.upload}
+        image={images.logo}
         properties={properties}
       />
 
@@ -123,7 +123,7 @@ const UploadNFT = () => {
             {categoryArray.map((el, i) => (
               <div
                 className={`${Style.upload_box_slider} ${
-                  active == i + 1 ? Style.acitve : ""
+                  active == i + 1 ? Style.active : ""
                 }`}
                 key={i + 1}
                 onClick={() => (setActive(i + 1), setCategory(el.category))}
@@ -142,17 +142,17 @@ const UploadNFT = () => {
                     <TiTick />
                   </div>
                 </div>
-                <p>Crypto Legend - Professor</p>
+                <p>Crypto Legend - {el.category}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div className={Style.Form_box_input_social}>
-          <div className={Style.Form_box_input}>
+        <div className={formStyle.Form_box_input_social}>
+          <div className={formStyle.Form_box_input}>
             <label htmlFor="Royalties">Royalties</label>
-            <div className={Style.Form_box_input_box}>
-              <div className={Style.Form_box_input_box_icon}>
+            <div className={formStyle.Form_box_input_box}>
+              <div className={formStyle.Form_box_input_box_icon}>
                 <FaPercent />
               </div>
               <input
@@ -163,10 +163,10 @@ const UploadNFT = () => {
             </div>
           </div>
 
-          <div className={Style.Form_box_input}>
+          <div className={formStyle.Form_box_input}>
             <label htmlFor="Size">Size</label>
-            <div className={Style.Form_box_input_box}>
-              <div className={Style.Form_box_input_box_icon}>
+            <div className={formStyle.Form_box_input_box}>
+              <div className={formStyle.Form_box_input_box_icon}>
                 <MdOutlineAttachFile />
               </div>
               <input
@@ -177,10 +177,10 @@ const UploadNFT = () => {
             </div>
           </div>
 
-          <div className={Style.Form_box_input}>
+          <div className={formStyle.Form_box_input}>
             <label htmlFor="Properties">properties</label>
-            <div className={Style.Form_box_input_box}>
-              <div className={Style.Form_box_input_box_icon}>
+            <div className={formStyle.Form_box_input_box}>
+              <div className={formStyle.Form_box_input_box_icon}>
                 <AiTwotonePropertySafety />
               </div>
               <input
@@ -195,6 +195,11 @@ const UploadNFT = () => {
         <div className={Style.upload_box_btn}>
           <Button
             btnName="Upload"
+            handleClick={() => {}}
+            classStyle={Style.upload_box_btn_style}
+          />
+          <Button
+            btnName="Preview"
             handleClick={() => {}}
             classStyle={Style.upload_box_btn_style}
           />
