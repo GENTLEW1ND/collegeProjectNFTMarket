@@ -61,7 +61,7 @@ const UploadNFT = () => {
         royalties={royalties}
         fileSize={fileSize}
         category={category}
-        image={images.logo}
+        image={images.logo} /*Remember to change the logo to the original one. */
         properties={properties}
       />
 
