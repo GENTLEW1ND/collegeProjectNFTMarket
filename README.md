@@ -1,1 +1,21 @@
-NFT MARKET NOTES
+# Sample Hardhat Project
+
+This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+
+Try running some of the following tasks:
+
+```shell
+npx hardhat help
+npx hardhat test
+REPORT_GAS=true npx hardhat test
+npx hardhat node
+npx hardhat run scripts/deploy.js
+```
+
+
+
+
+
+API Key: 0dd06beac49d535a44f2
+ API Secret: 95627da2ad854e81c0873810f831b3c239b76de1d41ff3fbd9fd5ccaffca0f15
+ JWT: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiI0Y2U0ZGEyYi04MDdmLTRmZWMtYWM2Yi02NjAxODE3NGZkZTciLCJlbWFpbCI6InJhamNoYWtyYWJvcnR5MDI5QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaW5fcG9saWN5Ijp7InJlZ2lvbnMiOlt7ImlkIjoiRlJBMSIsImRlc2lyZWRSZXBsaWNhdGlvbkNvdW50IjoxfSx7ImlkIjoiTllDMSIsImRlc2lyZWRSZXBsaWNhdGlvbkNvdW50IjoxfV0sInZlcnNpb24iOjF9LCJtZmFfZW5hYmxlZCI6ZmFsc2UsInN0YXR1cyI6IkFDVElWRSJ9LCJhdXRoZW50aWNhdGlvblR5cGUiOiJzY29wZWRLZXkiLCJzY29wZWRLZXlLZXkiOiIwZGQwNmJlYWM0OWQ1MzVhNDRmMiIsInNjb3BlZEtleVNlY3JldCI6Ijk1NjI3ZGEyYWQ4NTRlODFjMDg3MzgxMGY4MzFiM2MyMzliNzZkZTFkNDFmZjNmYmQ5ZmQ1Y2NhZmZjYTBmMTUiLCJpYXQiOjE3MDc1NzI5Mjh9.w6IMn_h1i201v6W-LauImKdyEYxoFGpKTUigZ0Jctto

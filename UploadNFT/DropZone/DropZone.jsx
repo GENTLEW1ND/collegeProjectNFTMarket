@@ -1,34 +1,36 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useContext } from "react";
 import { useDropzone } from "react-dropzone";
-import Image from "next/image";
 
 // INTERNAL IMPORT
 import Style from "./DropZone.module.css";
-import images from "../../img";
+import images from "../../img"
+import { NFTMarketplaceContext } from "../../context/NFTMarketplaceContext";
+import Image from "next/image";
 
 const DropZone = ({
   title,
   heading,
   subHeading,
-  itemName,
-  website,
+  name,
   description,
-  royalties,
-  filesize,
-  category,
-  properties,
-  image,
+  setImage,
+  uploadToPinnata,
+  price
 }) => {
   const [fileUrl, setFileUrl] = useState(null);
 
+
   const onDrop = useCallback(async (acceptedFile) => {
-    setFileUrl(acceptedFile[0]);
+   const url =await uploadToPinnata(acceptedFile[0]);
+   setFileUrl(url)
+   setImage(url)
+   console.log(url);
   });
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
     accept: "image/*",
-    maxSize: 5000000,
+    maxSize: 500000000,
   });
 
   return (
@@ -39,12 +41,13 @@ const DropZone = ({
           <p>{title}</p>
           <div className={Style.DropZone_box_input_img}>
             <Image
-              src={image}
+              src={images.upload}
               alt="upload"
               width={100}
               height={100}
               className={Style.DropZone_box_input_img_img}
               objectFit="contain"
+              priority={true}
             />
           </div>
           <p>{heading}</p>
@@ -55,48 +58,32 @@ const DropZone = ({
       {fileUrl && (
         <aside className={Style.DropZone_box_aside}>
           <div className={Style.DropZone_box_aside_box}>
-            <Image
-              src={images.nft_image_1}
+            <img
+              src={fileUrl}
               alt="nft image"
-              width={100}
-              height={100}
+              width={300}
+              height={300}
             />
 
             <div className={Style.DropZone_box_aside_box_preview}>
               <div className={Style.DropZone_box_aside_box_preview_one}>
                 <p>
                   <span>NFT Name:</span>
-                  {itemName || ""}
-                </p>
-                <p>
-                  <span>Website:</span>
-                  {website || ""}
+                  {name || ""}
                 </p>
               </div>
 
               <div className={Style.DropZone_box_aside_box_preview_two}>
                 <p>
-                  <span>Description</span>
+                  <span>Description:</span>
                   {description || ""}
                 </p>
               </div>
 
               <div className={Style.DropZone_box_aside_box_preview_three}>
                 <p>
-                  <span>Royalties</span>
-                  {royalties || ""}
-                </p>
-                <p>
-                  <span>FileSize</span>
-                  {filesize || ""}
-                </p>
-                <p>
-                  <span>Properties</span>
-                  {properties || ""}
-                </p>
-                <p>
-                  <span>Category</span>
-                  {category || ""}
+                  <span>price :</span>
+                  {price || ""}
                 </p>
               </div>
             </div>

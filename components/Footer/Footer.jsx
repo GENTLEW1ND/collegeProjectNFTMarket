@@ -24,8 +24,8 @@ const Footer = () => {
           <Image
             src={imges.logo}
             alt="Footer logo"
-            height={100}
-            width={100}
+            height={150}
+            width={150}
             className={Style.footer_box_social_logo}
           />
           <p>

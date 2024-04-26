@@ -10,10 +10,10 @@ const Discover = () => {
 
   // ----------DISCOVER NAVIGATION MENU
   const discover =[
-    {
-      name:"Collection",
-      link: "collection",
-    },
+    // {
+    //   name:"Collection",
+    //   link: "collection",
+    // },
     {
       name:"Search",
       link: "search",
@@ -22,14 +22,14 @@ const Discover = () => {
       name:"Author Profile",
       link: "author",
     },
-    {
-      name:"NFT Details",
-      link: "nftdetails",
-    },
-    {
-      name:"Account Setting",
-      link: "account",
-    },
+    // {
+    //   name:"NFT Details",
+    //   link: "nftdetails",
+    // },
+    // {
+    //   name:"Account Setting",
+    //   link: "account",
+    // },
     {
       name: "Upload NFT",
       link: "uploadNFT"
@@ -38,10 +38,10 @@ const Discover = () => {
       name:"Connect Wallet",
       link: "connectWallet",
     },
-    {
-      name:"Blog",
-      link: "blog",
-    }
+    // {
+    //   name:"Blog",
+    //   link: "../../../pages/index.js",
+    // }
 
   ]
   return ( 

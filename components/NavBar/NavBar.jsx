@@ -1,15 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
-// import Link from "next/link";
+import Link from "next/link";
+import { useRouter } from "next/router";
 //IMPORT ICONS
 import { MdNotifications } from "react-icons/md";
 import { BsSearch } from "react-icons/bs";
 import { CgMenuLeft, CgMenuRight } from "react-icons/cg";
+// import {diJqueryLogo} from 'react-icons/di'
+
 //INTERNAL IMPORT
 import Style from "./NavBar.module.css";
 import { Discover, HelpCenter, Profile, SideBar, Notification } from "./index";
-import { Button } from "../ComponentIndex";
+import { Button, Error } from "../ComponentIndex";
 import images from "../../img";
+
+//IMPORT FROM SMART CONTRACT
+import { NFTMarketplaceContext } from "../../context/NFTMarketplaceContext";
+
 const NavBar = () => {
   //----USESTATE  COMPONENT
   const [discover, setDiscover] = useState(false);
@@ -17,6 +24,8 @@ const NavBar = () => {
   const [notification, setNotification] = useState(false);
   const [profile, setProfile] = useState(false);
   const [openSideMenu, setOpenSideMenu] = useState(false);
+
+  const router = useRouter()
 
   const openMenu = (e) => {
     const btnText = e.target.innerText;
@@ -64,6 +73,11 @@ const NavBar = () => {
       setOpenSideMenu(false);
     }
   };
+
+  //SMART CONTRACT SECTION
+  const { currentAccount, connectWallet, openError } = useContext(NFTMarketplaceContext);
+
+
   return (
     <div className={Style.navbar}>
       <div className={Style.navbar_container}>
@@ -72,17 +86,19 @@ const NavBar = () => {
             <Image
               src={images.logo}
               alt="NFT MARKET PLACE"
-              width={100}
-              height={100}
+              width={150}
+              height={150}
+              onClick={()=>router.push('/')}
               className={Style.navbar_container_left_logo}
+              // objectFit="contain"
             />
           </div>
-          <div className={Style.navbar_container_left_box_input}>
+          {/* <div className={Style.navbar_container_left_box_input}>
             <div className={Style.navbar_container_left_box_input_box}>
               <input type="text" placeholder="search nft" />
               <BsSearch onClick={() => {}} className={Style.search_icon} />
             </div>
-          </div>
+          </div> */}
         </div>
         {/*END OF LEFT SECTION */}
         <div className={Style.navbar_container_right}>
@@ -105,16 +121,21 @@ const NavBar = () => {
             )}
           </div>
           {/* NOTIFICATION */}
-          <div className={Style.navbar_container_right_notify}>
+          {/* <div className={Style.navbar_container_right_notify}>
             <MdNotifications
               className={Style.notify}
               onClick={() => openNotification()}
             />
             {notification && <Notification />}
-          </div>
+          </div> */}
           {/* CREATE BUTTON SECTION */}
           <div className={Style.navbar_container_right_button}>
-            <Button btnName="Create" handleClick={()=>{}}/>
+            {currentAccount == "" ? (
+              <Button btnName="Connect" handleClick={()=>connectWallet()} />
+            ) : (
+                <Button btnName="Create" handleClick={() =>router.push("/uploadNFT")} />
+              
+            )}
           </div>
           {/* USER PROFILE */}
           <div className={Style.navbar_container_right_profile_box}>
@@ -127,7 +148,7 @@ const NavBar = () => {
                 onClick={() => openProfile()}
                 className={Style.navbar_container_right_profile}
               />
-              {profile && <Profile />}
+              {profile && <Profile currentAccount={currentAccount}/>}
             </div>
           </div>
           {/* MENU BUTTON  */}
@@ -142,9 +163,15 @@ const NavBar = () => {
       {/* SIDEBAR COMPONENT  */}
       {openSideMenu && (
         <div className={Style.sideBar}>
-          <SideBar setOpenSideMenu={setOpenSideMenu} />
+          <SideBar
+            setOpenSideMenu={setOpenSideMenu}
+            connectWallet={connectWallet}
+            currentAccount={currentAccount}
+          />
         </div>
       )}
+
+      {openError && <Error/>}
     </div>
   );
 };

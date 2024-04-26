@@ -14,8 +14,8 @@ const Brand = () => {
           <Image
             src={images.logo}
             alt="brand logo"
-            width={100}
-            height={100}
+            width={150}
+            height={150}
             className={Style.Brand_box_left_logo}
           />
           <h1>Earn free crypto with Caffixel</h1>

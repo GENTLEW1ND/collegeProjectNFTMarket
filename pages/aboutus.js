@@ -7,6 +7,13 @@ import { Brand } from "../components/ComponentIndex";
 import images from "../img";
 
 const aboutus = () => {
+  const founderArray = [
+    {
+      name: "Raj Chakraborty",
+      position: "Developer",
+      images: images.founderImage,
+    },
+  ];
   return (
     <div className={Style.aboutus}>
       <div className={Style.aboutus_box}>
@@ -21,7 +28,7 @@ const aboutus = () => {
           </div>
 
           <div className={Style.aboutus_box_hero_right}>
-            <Image src={images.hero} />
+            <Image src={images.hero} width={600} height={600}/>
           </div>
         </div>
 
@@ -35,7 +42,21 @@ const aboutus = () => {
         </div>
 
         <div className={Style.aboutus_box_founder}>
-            <div className={Style.aboutus_box_founder}></div>
+          <div className={Style.aboutus_box_founder}>
+            {founderArray.map((el, i) => (
+              <div className={Style.aboutus_box_founder_box_img}>
+                <Image
+                  src={el.images}
+                  alt={el.name}
+                  width={500}
+                  height={500}
+                  className={Style.aboutus_box_founder_box_img_img}
+                />
+                <h3>{el.name}</h3>
+                <p>{el.position}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

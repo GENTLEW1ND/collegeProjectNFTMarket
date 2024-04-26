@@ -19,10 +19,10 @@ import { Button } from "../../components/ComponentIndex";
 //INTERNAL IMPORT
 import Style from "./AuthorProfile.module.css";
 
-const AuthorProfileCard = () => {
+const AuthorProfileCard = ({currentAccount}) => {
   const [share, setShare] = useState(false);
   const [report, setReport] = useState(false);
-
+  // console.log("this is from the author profile paga ",nfts)
   //Functions
   const copyAddress = ()=>{
     const copyText = document.getElementById('myInput')
@@ -72,7 +72,7 @@ const AuthorProfileCard = () => {
           <div className={Style.AuthorProfileCard_box_info_address}>
             <input
               type="text"
-              value="0x242553242342423454..A822"
+              value={currentAccount}
               id="myInput"
             />
             <FiCopy

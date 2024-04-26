@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { GrClose } from "react-icons/gr";
+import { useRouter } from "next/router";
 import {
   TiSocialFacebook,
   TiSocialLinkedin,
@@ -17,17 +18,19 @@ import Style from "./SideBar.module.css";
 import images from "../../../img";
 import Button from "../../Button/Button";
 
-const SideBar = ({ setOpenSideMenu }) => {
+const SideBar = ({ setOpenSideMenu, connectWallet, currentAccount }) => {
   //-------USE STATE
   const [openDiscover, setOpenDiscover] = useState(false);
   const [openHelp, setOpenHelp] = useState(false);
 
+  const router = useRouter();
+
   // ----------DISCOVER NAVIGATION MENU
   const discover = [
-    {
-      name: "Collection",
-      link: "collection",
-    },
+    // {
+    //   name: "Collection",
+    //   link: "collection",
+    // },
     {
       name: "Search",
       link: "search",
@@ -36,22 +39,22 @@ const SideBar = ({ setOpenSideMenu }) => {
       name: "Author Profile",
       link: "author-profile",
     },
-    {
-      name: "NFT Details",
-      link: "nft-details",
-    },
-    {
-      name: "Account Setting",
-      link: "account-setting",
-    },
+    // {
+    //   name: "NFT Details",
+    //   link: "nft-details",
+    // },
+    // {
+    //   name: "Account Setting",
+    //   link: "account-setting",
+    // },
     {
       name: "Connect Wallet",
       link: "connect-wallet",
     },
-    {
-      name: "Blog",
-      link: "blog",
-    },
+    // {
+    //   name: "Blog",
+    //   link: "blog",
+    // },
   ];
   //-------HELP CENTER
   const helpCenter = [
@@ -63,18 +66,18 @@ const SideBar = ({ setOpenSideMenu }) => {
       name: "Contact us",
       link: "contact-us",
     },
-    {
-      name: "Sign up",
-      link: "sign-up",
-    },
-    {
-      name: "Sign in",
-      link: "sign-in",
-    },
-    {
-      name: "Subscription",
-      link: "subscritpion",
-    },
+    // {
+    //   name: "Sign up",
+    //   link: "sign-up",
+    // },
+    // {
+    //   name: "Sign in",
+    //   link: "sign-in",
+    // },
+    // {
+    //   name: "Subscription",
+    //   link: "subscritpion",
+    // },
   ];
 
   // FUNCTIONS
@@ -169,7 +172,11 @@ const SideBar = ({ setOpenSideMenu }) => {
       </div>
 
       <div className={Style.sideBar_button}>
-        <Button btnName="Create" handleClick={()=>{}} />
+      {currentAccount == "" ? (
+              <Button btnName="Connect" handleClick={() => connectWallet()} />
+            ) : (
+                <Button btnName="Create" handleClick={()=>router.push('/uploadNFT')} />            
+            )}
         <Button btnName="Connect Wallet" handleClick={()=>{}}/>
       </div>
     </div>

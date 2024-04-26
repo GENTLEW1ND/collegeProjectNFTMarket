@@ -25,7 +25,7 @@ import service2 from "./service-2.png";
 import service3 from "./service-3.png";
 import service4 from "./service-4.png";
 import logoLight from "./logo-light.svg";
-import logo from "./logo.svg";
+import logo from "./logo.png";
 import facebook from "./facebook.svg";
 import twitter from "./twitter.svg";
 import telegram from "./telegram.svg";
@@ -43,6 +43,10 @@ import musiceWave from "./musicwave.png";
 import update from "./update.png";
 import earn from './eran.png'
 import NFTVideo from './nftvideo.png'
+import hero2 from './hero2.png'
+import founderImage from './founderImage.jpg'
+import loaderImg from './loader.gif'
+import upload from './upload.png'
 
 export default {
   collection,
@@ -89,5 +93,9 @@ export default {
   youtube,
   zgcmq,
   earn,
-  NFTVideo
+  NFTVideo,
+  hero2,
+  founderImage,
+  loaderImg,
+  upload
 };

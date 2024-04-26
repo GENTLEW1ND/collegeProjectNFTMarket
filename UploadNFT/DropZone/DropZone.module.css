@@ -32,6 +32,7 @@
     display: grid;
     grid-template-columns: 1.5fr 4fr;
     gap: 3rem;
+    overflow:hidden;
 }
 
 .DropZone_box_aside_box_preview p span{
@@ -41,6 +42,7 @@
 }
 
 .DropZone_box_aside_box_preview_one{
+    padding-top: 5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;

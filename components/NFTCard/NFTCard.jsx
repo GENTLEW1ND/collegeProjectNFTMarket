@@ -2,23 +2,26 @@ import React, { useState } from "react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { BsImages } from "react-icons/bs";
 import Image from "next/image";
+import Link from "next/link";
 
 //INTERNAL IMPORT
 import Style from "./NFTCard.module.css";
 import images from "../../img";
 
-const NFTCard = () => {
 
-  const CardArray = [
-    images.nft_image_1,
-    images.nft_image_2,
-    images.nft_image_3,
-    images.nft_image_2,
-    images.nft_image_1,
-    images.nft_image_2,
-    images.nft_image_3,
- 
-  ];
+const NFTCard = ({nfts}) => {
+
+  // const CardArray = [
+  //   images.nft_image_1,
+  //   images.nft_image_2,
+  //   images.nft_image_3,
+  //   images.nft_image_2,
+  //   images.nft_image_1,
+  //   images.nft_image_2,
+  //   images.nft_image_3,
+  // ];
+
+
   const [like, setlike] = useState(true);
 
     const likeNft =()=>{
@@ -31,11 +34,12 @@ const NFTCard = () => {
 
   return (
     <div className={Style.NFTCard}>
-      {CardArray.map((el, i) => (
-        <div className={Style.NFTCard_box} key={i + 1}>
+      {nfts && nfts.length > 0 ?nfts.map((el, i) => (
+        <Link href={{pathname: "/nftdetails"}}>
+          <div className={Style.NFTCard_box} key={i + 1}>
           <div className={Style.NFTCard_box_img}>
-            <Image
-              src={el}
+            <img
+              src={el.image}
               alt="NFT images"
               width={400}
               height={400}
@@ -68,14 +72,14 @@ const NFTCard = () => {
           <div className={Style.NFTCard_box_update_details}>
             <div className={Style.NFTCard_box_update_details_price}>
               <div className={Style.NFTCard_box_update_details_price_box}>
-                <h4>Clone #34363</h4>
+                <h4>{el.name} #{el.tokenId}</h4>
 
                 <div className={Style.NFTCard_box_update_details_price_box_box}>
                   <div
                     className={Style.NFTCard_box_update_details_price_box_bid}
                   >
                     <small>Current Bid</small>
-                    <p>1.000Eth</p>
+                    <p>{el.price}Eth</p>
                   </div>
                   <div
                     className={Style.NFTCard_box_update_details_price_box_stock}
@@ -90,7 +94,9 @@ const NFTCard = () => {
             </div>
           </div>
         </div>
-      ))}
+        </Link>
+      
+      )): <div>No NFTs available</div>}
     </div>
   );
 };
