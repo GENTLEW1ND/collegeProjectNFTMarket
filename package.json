@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formspree/react": "^2.5.1",
     "@openzeppelin/contracts": "^4.7.3",
     "axios": "^1.6.7",
     "ether": "^0.0.9",

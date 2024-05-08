@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   TiSocialFacebook,
   TiSocialLinkedin,
@@ -7,13 +7,23 @@ import {
   TiSocialInstagram,
 } from "react-icons/ti";
 import { HiOutlineMail } from "react-icons/hi";
+import { useForm, ValidationError } from "@formspree/react";
 
 //INTERNAL IMPORT
 import Style from "../styles/contactus.module.css";
 import formStyle from "../AccountPage/Form/Form.module.css";
 import { Button } from "../components/ComponentIndex";
 
-const contactus = () => {
+const Contactus = () => {
+  const [state, handleSubmit] = useForm("xvoellqj"); 
+  const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (state.succeeded) {
+      setSubmitted(true);
+    }
+  }, [state.succeeded]);
+
   return (
     <div className={Style.contactus}>
       <div className={Style.contactus_box}>
@@ -23,7 +33,7 @@ const contactus = () => {
             <div className={Style.contactus_box_box_left_item}>
               <h3>🌏 Address</h3>
               <p>
-                Milky way, earth, aisa, india, meghalaya, shillong, st.Anthony's
+                Milky way, earth, asia, india, meghalaya, shillong, St. Anthony's
                 college, room 46.
               </p>
             </div>
@@ -55,12 +65,13 @@ const contactus = () => {
             </div>
           </div>
           <div className={formStyle.contactus_box_box_right}>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className={formStyle.Form_box_input}>
                 <label htmlFor="name">Username</label>
                 <input
+                  name="name"
                   type="text"
-                  placeholder="Bless bhai"
+                  placeholder="Enter your name"
                   className={formStyle.Form_box_input_userName}
                 />
               </div>
@@ -71,24 +82,30 @@ const contactus = () => {
                   <div className={formStyle.Form_box_input_box_icon}>
                     <HiOutlineMail />
                   </div>
-                  <input type="text" placeholder="Email*" />
+                  <input type="text" name="email" placeholder="Email*" />
                 </div>
+                <ValidationError
+                  prefix="Email"
+                  field="email"
+                  errors={state.errors}
+                />
               </div>
               <div className={formStyle.Form_box_input}>
-                <label htmlFor="description">Message</label>
+                <label htmlFor="message">Message</label>
                 <textarea
-                  name=""
-                  id=""
+                  name="message"
+                  id="message"
                   cols="30"
                   rows="10"
                   placeholder="Something about yourself in few words"
                 ></textarea>
               </div>
-              <Button
+
+              {submitted ? <p>Thanks for reaching out!</p> : <Button
                 btnName="Send Message"
-                handleClick={() => {}}
+                handleClick={() => { }}
                 classStyle={Style.button}
-              />
+              />}
             </form>
           </div>
         </div>
@@ -97,4 +114,4 @@ const contactus = () => {
   );
 };
 
-export default contactus;
+export default Contactus;

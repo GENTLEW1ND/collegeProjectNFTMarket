@@ -48,7 +48,6 @@ const NFTDetails = () => {
   return (
     <div>
       <NFTDetailsPage nft={nft}/>
-      <Catagory/>
       <Brand/>
     </div>
   )

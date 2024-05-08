@@ -5,25 +5,15 @@ import Style from "../styles/index.module.css"
 import {
   HeroSection,
   Service,
-  BigNFTSlider,
-  Subscribe,
   Title,
-  Catagory,
-  Filter,
   NFTCard,
-  Collection,
   FollowerTab,
-  AudioLive,
-  Slider,
   Brand,
-  Video,
   Loader
 } from '../components/ComponentIndex'
 import { getTopCreators } from '../TopCreator/TopCreator'
 
 import { NFTMarketplaceContext } from '../context/NFTMarketplaceContext'
-
-
 
 const Home = () => {
 
@@ -50,9 +40,6 @@ const Home = () => {
 }
   fetchTheNfts()
 },[])
-
-
-  
 
   return (
     <div className={Style.homePage}>

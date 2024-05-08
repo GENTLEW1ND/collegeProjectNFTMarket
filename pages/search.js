@@ -36,21 +36,13 @@ const search = () => {
   }, [nfts]);
 
 
-  // const collectionArray = [
-  //   images.nft_image_1,
-  //   images.nft_image_2,
-  //   images.nft_image_3,
-  //   images.nft_image_1,
-  //   images.nft_image_2,
-  //   images.nft_image_3, 
-  //   images.nft_image_2,
-  //   images.nft_image_3,
-  // ]
 
   //ADDING A FILTER WHILE YOU SEARCH ANYTHING
   const onHandleSearch = (value) => {
-    const filteredNfts = nfts.filter(({ name }) =>
-      name.toLowerCase().includes(value.toLowerCase())
+    const filteredNfts = nfts.filter(({ name,price,description }) =>
+      name.toLowerCase().includes(value.toLowerCase())||
+      price.includes(value)||
+      description.toLowerCase().includes(value.toLowerCase())
     )
     if (filteredNfts.length === 0) {
       setNfts(nftsCopy)
@@ -69,9 +61,7 @@ const search = () => {
     <div className={Style.search}>
       <Banner bannerImage={images.creatorbackground10} />
       <SearchBar onHandleSearch={onHandleSearch} onClearSearch={onClearSearch} />
-      <Filter />
       {nfts.length == 0 ? <Loader/> :  <NFTCardTwo NFTData={nfts} />}
-      <Slider />
       <Brand />
     </div>
   )

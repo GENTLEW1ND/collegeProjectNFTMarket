@@ -18,7 +18,7 @@ const HeroSection = () => {
             your NFTs and sell them
           </p>
           <Link href="/search">
-          <Button btnName="Start your search"></Button>
+          <Button btnName="Start your search" handleClick={() => {}}></Button>
           </Link>
         </div>
         <div className={Style.heroSection_box_right}>

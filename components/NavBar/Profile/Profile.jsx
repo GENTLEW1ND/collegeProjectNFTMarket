@@ -21,8 +21,7 @@ const Profile = ({currentAccount}) => {
           className={Style.profile_account_img}
         ></Image>
         <div className={Style.profile_account_info}>
-          <p>Raj Chakraborty</p>
-          <small>{currentAccount.slice(0,18)}...</small>
+          <p>{currentAccount.slice(0,18)}...</p>
         </div>
       </div>
       <div className={Style.profile_menu}>

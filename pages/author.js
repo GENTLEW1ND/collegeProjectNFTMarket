@@ -10,51 +10,9 @@ import { AuthorProfileCard, AuthorTabs, AuthorNFTCardBox } from '../authorPage/c
 
 //IMPORT SMART CONTRACT
 import { NFTMarketplaceContext } from '../context/NFTMarketplaceContext.js'
+import { BsDisplay } from 'react-icons/bs'
 
 const author = () => {
-    const followingArray = [
-        {
-            background: images.creatorbackground1,
-            user: images.user1,
-            seller: "kflfsfsdflkdjflsd",
-        },
-        {
-            background: images.creatorbackground2,
-            user: images.user2,
-            seller: "kflfsfsdflkdjflsd",
-
-        },
-        {
-            background: images.creatorbackground3,
-            user: images.user3,
-            seller: "kflfsfsdflkdjflsd",
-
-        },
-        {
-            background: images.creatorbackground4,
-            user: images.user4,
-            seller: "kflfsfsdflkdjflsd",
-
-        },
-        {
-            background: images.creatorbackground5,
-            user: images.user5,
-            seller: 'kflfsfsdflkdjflsd',
-
-        },
-        {
-            background: images.creatorbackground6,
-            user: images.user6,
-            seller: "kflfsfsdflkdjflsd",
-
-        },
-        {
-            background: images.creatorbackground7,
-            user: images.user7,
-            seller: "kflfsfsdflkdjflsd",
-
-        },
-    ]
 
     const [collectiables, setCollectiables] = useState(true)
     const [created, setCreated] = useState(false)
@@ -63,40 +21,53 @@ const author = () => {
     const [following, setFollowing] = useState(false)
 
     //IMPORT SMART CONTRACT DATA
-    const {fetchMyNFTsOrListedNFTs, currentAccount} = useContext(NFTMarketplaceContext)
+    const { fetchMyNFTsOrListedNFTs, currentAccount } = useContext(NFTMarketplaceContext)
 
-    const[nfts, setNfts] = useState([])
-    const[myNfts, setMyNfts] = useState([])
+    const [nfts, setNfts] = useState([])
+    const [myNfts, setMyNfts] = useState([])
 
 
     //THIS HOOK IS USED FOR FETCHING THE LISTED NFTS
     useEffect(() => {
-        fetchMyNFTsOrListedNFTs("fetchItemsListed").then((items)=>{
+        fetchMyNFTsOrListedNFTs("fetchItemsListed").then((items) => {
             console.log("Listed NFTs:", items);
             setNfts(items)
         })
-        .catch((error)=>{
-            console.error('Error fetching "Listed NFTs":', error);
-        })
-      }, []);
+            .catch((error) => {
+                console.error('Error fetching "Listed NFTs":', error);
+            })
+    }, []);
 
     //THIS HOOK IS USED FOR FETCHING MY NFTS
     useEffect(() => {
         fetchMyNFTsOrListedNFTs("fetchMyNFTs")
-          .then((items) => {
-            console.log("my NFTs:", items);
-            setMyNfts(items);
-          })
-          .catch((error) => {
-            console.error('Error fetching "My NFTs":', error);
-          });
-      }, []);
-      
+            .then((items) => {
+                console.log("my NFTs:", items);
+                setMyNfts(items);
+            })
+            .catch((error) => {
+                console.error('Error fetching "My NFTs":', error);
+            });
+    }, []);
+
 
     return (
         <div className={Style.banner}>
             <Banner bannerImage={images.creatorbackground2} />
-            <AuthorProfileCard currentAccount={currentAccount}/>
+            <AuthorProfileCard currentAccount={currentAccount} />
+            <div style={{
+    marginTop: '20px',
+    paddingLeft: '40rem',
+    backgroundColor: '#f0f0f0',
+    borderRadius: '5px',
+    display: 'flex',  // Adding flex display
+    flexDirection: 'row',  // Setting direction to row
+    fontSize: '16px',  // Increasing font size
+}} className={Style.nftCount}>
+    <p style={{ margin: '5px 20px' }}>Listed NFTs: {nfts.length}</p>
+    <p style={{ margin: '5px 20px' }}>Owned NFTs: {myNfts.length}</p>
+</div>
+
             <AuthorTabs
                 setCollectiables={setCollectiables}
                 setCreated={setCreated}
@@ -113,14 +84,7 @@ const author = () => {
                 nfts={nfts}
                 myNfts={myNfts}
             />
-            <Title heading="Popular creator" paragraph="Click on music icon and enjoy NFT music or audio " />
-            <div className={Style.author_box}>
-                {
-                    followingArray.map((el, i) => (
-                        <FollowerTabCard el={el} i={i} />
-                    ))
-                }
-            </div>
+
             <Brand />
         </div>
     )

@@ -16,12 +16,6 @@ const AuthorTabs = ({
   const [activeBtn, setActiveBtn] = useState(1);
   const [selectedMenu, setSelectedMenu] = useState("Most Recent");
 
-  const listArray = [
-    "Created By Admin",
-    "Most Appreciated",
-    "Most Discussed",
-    "Most Viewed",
-  ];
 
   const openDropDownList = () => {
     if (!openList) {
@@ -81,7 +75,7 @@ const AuthorTabs = ({
               className={`${activeBtn == 1 ? Style.active : ""}`}
               onClick={(e) => openTab(e)}
             >
-              Listed NFTs
+              Listed NFTs 
             </button>
             <button
               className={`${activeBtn == 2 ? Style.active : ""}`}
@@ -89,7 +83,7 @@ const AuthorTabs = ({
             >
               Owned NFTs
             </button>
-            <button
+            {/* <button
               className={`${activeBtn == 3 ? Style.active : ""}`}
               onClick={(e) => openTab(e)}
             >
@@ -106,11 +100,11 @@ const AuthorTabs = ({
               onClick={(e) => openTab(e)}
             >
               Follower
-            </button>
+            </button> */}
           </div>
         </div>
 
-        <div className={Style.AuthorTabs_box_right}>
+        {/* <div className={Style.AuthorTabs_box_right}>
           <div
             className={Style.AuthorTabs_box_right_para}
             onClick={() => openDropDownList()}
@@ -132,7 +126,7 @@ const AuthorTabs = ({
               ))}
             </div>
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );

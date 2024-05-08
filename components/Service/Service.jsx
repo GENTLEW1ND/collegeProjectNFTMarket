@@ -19,10 +19,9 @@ const Service = () => {
           <p className={Style.service_box_item_step}>
             <span>Step 1</span>
           </p>
-          <h3>Filter and Discover</h3>
+          <h3>Connect Wallet</h3>
           <p>
-            Connect with wallet, dicover, buy NFTs, sell your NFTs and earn
-            money.
+            Connect with wallet to start buy, minting and selling nfts.
           </p>
         </div>
 
@@ -37,28 +36,9 @@ const Service = () => {
           <p className={Style.service_box_item_step}>
             <span>Step 2</span>
           </p>
-          <h3>Connect Wallet</h3>
-          <p>
-            Connect with wallet, dicover, buy NFTs, sell your NFTs and earn
-            money.
-          </p>
-        </div>
-
-
-        <div className={Style.service_box_item}>
-          <Image
-            src={images.service3}
-            alt="Filter and Discover"
-            width={100}
-            height={100}
-          />
-          <p className={Style.service_box_item_step}>
-            <span>Step 3</span>
-          </p>
           <h3>Filter and Discover</h3>
           <p>
-            Connect with wallet, dicover, buy NFTs, sell your NFTs and earn
-            money.
+            Discover and filter the various range of nfts. 
           </p>
         </div>
 
@@ -71,12 +51,28 @@ const Service = () => {
             height={100}
           />
           <p className={Style.service_box_item_step}>
+            <span>Step 3</span>
+          </p>
+          <h3>Start your journey</h3>
+          <p>
+            Start your journey buy minting, selling and buying.
+          </p>
+        </div>
+
+
+        <div className={Style.service_box_item}>
+          <Image
+            src={images.service3}
+            alt="Filter and Discover"
+            width={100}
+            height={100}
+          />
+          <p className={Style.service_box_item_step}>
             <span>Step 4</span>
           </p>
-          <h3>Start trading</h3>
+          <h3>Contact Us</h3>
           <p>
-            Connect with wallet, dicover, buy NFTs, sell your NFTs and earn
-            money.
+            In any needs and queries feel free to contact us.
           </p>
         </div>
 

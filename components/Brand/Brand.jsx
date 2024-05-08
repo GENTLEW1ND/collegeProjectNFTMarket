@@ -5,6 +5,7 @@ import Image from "next/image";
 import Style from "./Brand.module.css";
 import images from "../../img";
 import { Button } from "../../components/ComponentIndex";
+import Link from "next/link";
 
 const Brand = () => {
   return (
@@ -18,12 +19,14 @@ const Brand = () => {
             height={150}
             className={Style.Brand_box_left_logo}
           />
-          <h1>Earn free crypto with Caffixel</h1>
+          <h1>Earn crypto with Caffixel</h1>
           <p>A creative agency that lead and inspire.</p>
 
           <div className={Style.Brand_box_left_btn}>
-            <Button btnName="Create" handleClick={() => {}} />
-            <Button btnName="Discover" handleClick={() => {}} />
+            <Link href={{pathname:'./uploadNFT'}}>
+            <Button btnName="Create" handleClick={() => {}}/>
+            </Link>
+            {/* <Button btnName="Discover" handleClick={() => {}} /> */}
           </div>
         </div>
         <div className={Style.Brand_box_right}>

@@ -8,15 +8,6 @@ import Style from "./FollowerTabCard.module.css";
 import images from "../../../img";
 
 const FollowerTabCard = ({ i, el }) => {
-  const [following, setFollowing] = useState(false);
-
-  const followMe = () => {
-    if (!following) {
-      setFollowing(true);
-    } else {
-      setFollowing(false);
-    }
-  };
 
   return (
     <div className={Style.FollowerTabCard}>
@@ -51,7 +42,7 @@ const FollowerTabCard = ({ i, el }) => {
         <div className={Style.FollowerTabCard_box_info}>
           <div className={Style.FollowerTabCard_box_info_name}>
             <h4>
-             {el.seller.slice(0,9)}{" "}
+             {el.seller.slice(0,19)}...{" "}
               <span>
                 <MdVerified />
               </span>
@@ -59,18 +50,7 @@ const FollowerTabCard = ({ i, el }) => {
             <p>{el.total || 0} ETH</p>
           </div>
 
-          <div className={Style.FollowerTabCard_box_info_following}>
-            {following ? (
-              <a onClick={() => followMe()}>
-                Follow{""}{" "}
-                <span>
-                  <TiTick />
-                </span>
-              </a>
-            ) : (
-              <a onClick={() => followMe()}>Following</a>
-            )}
-          </div>
+          
         </div>
       </div>
     </div>

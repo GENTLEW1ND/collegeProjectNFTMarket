@@ -11,31 +11,11 @@ import images from "../../img";
 
 const NFTCard = ({nfts}) => {
 
-  // const CardArray = [
-  //   images.nft_image_1,
-  //   images.nft_image_2,
-  //   images.nft_image_3,
-  //   images.nft_image_2,
-  //   images.nft_image_1,
-  //   images.nft_image_2,
-  //   images.nft_image_3,
-  // ];
-
-
-  const [like, setlike] = useState(true);
-
-    const likeNft =()=>{
-        if(!like){
-            setlike(true)
-        }else{
-            setlike(false)
-        }
-    }
 
   return (
     <div className={Style.NFTCard}>
       {nfts && nfts.length > 0 ?nfts.map((el, i) => (
-        <Link href={{pathname: "/nftdetails"}}>
+        <Link href={{pathname: "/nftdetails", query:el}}>
           <div className={Style.NFTCard_box} key={i + 1}>
           <div className={Style.NFTCard_box_img}>
             <img
@@ -46,29 +26,7 @@ const NFTCard = ({nfts}) => {
               className={Style.NFTCard_box_img_img}
             />
           </div>
-          <div className={Style.NFTCard_box_update}>
-            <div className={Style.NFTCard_box_update_left}>
-              <div
-                className={Style.NFTCard_box_update_left_like}
-                onClick={() => likeNft()}
-              >
-                {like ? (
-                  <AiOutlineHeart />
-                ) : (
-                  <AiFillHeart
-                    className={Style.NFTCard_box_update_left_like_icon}
-                  />
-                )}
-                {""} 22
-              </div>
-            </div>
-            <div className={Style.NFTCard_box_update_right}>
-              <div className={Style.NFTCard_box_update_right_info}>
-                <small>Remaining time</small>
-                <p>3h : 15m : 20s</p>
-              </div>
-            </div>
-          </div>
+      
           <div className={Style.NFTCard_box_update_details}>
             <div className={Style.NFTCard_box_update_details_price}>
               <div className={Style.NFTCard_box_update_details_price_box}>
@@ -84,7 +42,6 @@ const NFTCard = ({nfts}) => {
                   <div
                     className={Style.NFTCard_box_update_details_price_box_stock}
                   >
-                    <small>61 in stock</small>
                   </div>
                 </div>
               </div>

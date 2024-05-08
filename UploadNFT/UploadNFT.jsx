@@ -45,7 +45,7 @@ const UploadNFT = () => {
           <label htmlFor="nft">Item Name</label>
           <input
             type="text"
-            placeholder="Bless bhai"
+            placeholder="Enter the name."
             className={formStyle.Form_box_input_userName}
             onChange={(e) => setName(e.target.value)}
           />
@@ -79,7 +79,7 @@ const UploadNFT = () => {
             id=""
             cols="30"
             rows="10"
-            placeholder="Something about yourself in few words"
+            placeholder="Something about the Nft in few words"
             onChange={(e) => setDescription(e.target.value)}
           ></textarea>
           <p>
